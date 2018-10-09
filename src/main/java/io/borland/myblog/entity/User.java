@@ -5,8 +5,10 @@ import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
+@Table(name = "users")
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class User extends AbstractUser implements Serializable {
@@ -16,7 +18,8 @@ public class User extends AbstractUser implements Serializable {
     private String password;
     @Transient
     private String confirmPassword;
-    @OneToOne
-    @JoinColumn(name = "role_id")
-    private Role role;
+    @ManyToMany
+    @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Role> role;
 }

@@ -14,6 +14,14 @@ CREATE TABLE users (
     FOREIGN KEY (role_id) REFERENCES roles (id)
 );
 
+CREATE TABLE user_roles
+(
+    user_id integer NOT NULL,
+    role_id bigint NOT NULL,
+    PRIMARY KEY (user_id, role_id),
+    FOREIGN KEY (role_id) REFERENCES roles (id),
+    FOREIGN KEY (user_id) REFERENCES users (id)
+);
 
 CREATE TABLE articles (
     id   INTEGER      NOT NULL AUTO_INCREMENT,

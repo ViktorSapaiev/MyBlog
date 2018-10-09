@@ -9,7 +9,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @ComponentScan(basePackages = "io.borland.myblog")
 @EnableSwagger2
 @SpringBootApplication
-
 public class MyblogApplication {
 
     public static void main(String[] args) {
