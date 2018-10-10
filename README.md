@@ -1,11 +1,11 @@
 # Myblog
 RESTful API for Blog
 
-##Task
+## Task
 Create a Restful API which will be used by the simple blog web application.
 The application should have one user role - PUBLISHER.
 
-#####REST resources to implement
+##### REST resources to implement
 *	Resource to authenticate a particular user. Users may be hardcoded.
 
 *	Create, update, delete own blog posts.
@@ -16,16 +16,16 @@ The application should have one user role - PUBLISHER.
 
 The publisher should be able to update or remove only own posts. All REST resources must be secure except the authentication one.
 
-######Required technologies 
+###### Required technologies 
 Java 8 and any desired DB's and frameworks.
 
-##Technologies
+## Technologies
 * Java 8
 * Spring boot (Security,Data,IoC)
 * Hibernate
 * H2 database
 
-##Installing
+## Installing
 
 1. Clone this project on your computer
 2. Run MyBlogApplication.java file in your favorite IDE
