@@ -29,5 +29,5 @@ Java 8 and any desired DB's and frameworks.
 
 1. Clone this project on your computer
 2. Run MyBlogApplication.java file in your favorite IDE
-3. Install []Postman](https://www.getpostman.com/)
+3. Install [Postman](https://www.getpostman.com/)
 4. Run Postman and import "MyBlog.postman_collection.json"
