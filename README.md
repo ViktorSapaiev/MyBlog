@@ -28,6 +28,7 @@ Java 8 and any desired DB's and frameworks.
 ## Installing
 
 1. Clone this project on your computer
-2. Run MyBlogApplication.java file in your favorite IDE
-3. Install [Postman](https://www.getpostman.com/)
-4. Run Postman and import "MyBlog.postman_collection.json"
+2. Open project from comand line
+3. Run `mvn spring-boot:run`
+4. Install [Postman](https://www.getpostman.com/)
+5. Run Postman and import "MyBlog.postman_collection.json"
