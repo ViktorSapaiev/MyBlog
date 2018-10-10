@@ -3,13 +3,17 @@ package io.borland.myblog.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @MappedSuperclass
 @Data
-public abstract class AbstractUser {
+abstract class AbstractUser {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "user_id")
     private long id;
-    @Column(name = "username")
+    @NotEmpty
+    @Column(name = "username", nullable = false, unique = true)
     private String username;
 }

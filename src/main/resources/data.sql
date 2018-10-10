@@ -1,8 +1,8 @@
 INSERT INTO roles VALUES(1,'PUBLISHER');
 INSERT INTO roles VALUES(2,'ADMIN');
 
-INSERT INTO users VALUES(1,'Terminator','user1@gmail.com',1 ,'$2a$04$V.hR6cV8.bh/aKs6fQdpL.kmzYgk1.ig1I0fe1sXGsy0KZHXPLukG');
-INSERT INTO users VALUES(2,'Superman','user2@gmail.com',1 ,'$2a$04$V.hR6cV8.bh/aKs6fQdpL.kmzYgk1.ig1I0fe1sXGsy0KZHXPLukG');
+INSERT INTO users VALUES(1,'Terminator','user1@gmail.com','$2a$04$V.hR6cV8.bh/aKs6fQdpL.kmzYgk1.ig1I0fe1sXGsy0KZHXPLukG');
+INSERT INTO users VALUES(2,'Superman','user2@gmail.com','$2a$04$V.hR6cV8.bh/aKs6fQdpL.kmzYgk1.ig1I0fe1sXGsy0KZHXPLukG');
 
 INSERT INTO user_roles(user_id, role_id) VALUES (1,1);
 INSERT INTO user_roles(user_id, role_id) VALUES (2,1);

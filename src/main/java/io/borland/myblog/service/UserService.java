@@ -7,6 +7,8 @@ public interface UserService {
 
     User getUser(String email);
 
+    User getUserByUsername(String username);
+
     void addUser(User user);
 
     void updateUser(User user);

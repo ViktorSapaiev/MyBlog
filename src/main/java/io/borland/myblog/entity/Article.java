@@ -4,6 +4,9 @@ package io.borland.myblog.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -12,15 +15,20 @@ import java.time.LocalDateTime;
 @Data
 public class Article implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
+    @NotNull
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
     private UserShort author;
-    @Column
+    @NotNull
+    @Column(nullable = false)
     private LocalDateTime date;
-    @Column
+    @NotBlank
+    @Size(max = 500)
+    @Column(nullable = false, unique = true)
     private String header;
-    @Column
+    @NotBlank
+    @Column(nullable = false)
     private String text;
 }

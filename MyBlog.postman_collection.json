@@ -1,0 +1,288 @@
+{
+  "info": {
+    "_postman_id": "8f64e69f-cffd-4a2a-ac4b-8180342ba4aa",
+    "name": "MyBlog",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/login?username=user1@gmail.com&password=qwerty123",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "login"
+          ],
+          "query": [
+            {
+              "key": "username",
+              "value": "user1@gmail.com"
+            },
+            {
+              "key": "password",
+              "value": "qwerty123"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get all Articles",
+      "request": {
+        "method": null,
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/articles",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "articles"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get all articles for {authorId}",
+      "request": {
+        "method": null,
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/articles?authorId=1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "articles"
+          ],
+          "query": [
+            {
+              "key": "authorId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Article",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/articles?articleId=1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "articles"
+          ],
+          "query": [
+            {
+              "key": "articleId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Edit Article",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"author\": {\r\n    \"id\": 1,\r\n    \"username\": \"Terminator\"\r\n  },\r\n  \"date\": \"2018-10-09T12:20:59.273Z\",\r\n  \"header\": \"Hi\",\r\n  \"id\": 1,\r\n  \"text\": \"I am Arnold\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/articles/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "articles",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get authorized author",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"confirmPassword\": \"fcsd19360207\",\r\n  \"email\": \"borlandfcsd@gmail.com\",\r\n  \"id\": 3,\r\n  \"password\": \"fcsd19360207\",\r\n  \"role\": [\r\n    {\r\n      \"id\": 1,\r\n      \"role\": \"PUBLISHER\"\r\n    }\r\n  ],\r\n  \"username\": \"borlandfcsd\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/users/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "users",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get article with {id}",
+      "request": {
+        "method": null,
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/articles/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "articles",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add new article",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"author\": {\r\n    \"id\": 1,\r\n    \"username\": \"Terminator\"\r\n  },\r\n  \"date\": \"2018-10-09T12:20:59.273Z\",\r\n  \"header\": \"Hi\",\r\n  \"id\": 4,\r\n  \"text\": \"I am Arnold\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/articles",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "articles"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create new user",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"confirmPassword\": \"qwerty123\",\r\n  \"email\": \"Batman@gmail.com\",\r\n  \"id\": 3,\r\n  \"password\": \"qwerty123\",\r\n  \"role\": [\r\n    {\r\n      \"id\": 1,\r\n      \"role\": \"PUBLISHER\"\r\n    }\r\n  ],\r\n  \"username\": \"Batman\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/users/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "users",
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

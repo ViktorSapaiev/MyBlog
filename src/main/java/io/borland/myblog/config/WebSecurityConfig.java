@@ -19,11 +19,7 @@ import org.springframework.security.web.authentication.SimpleUrlAuthenticationFa
 @EnableGlobalMethodSecurity(securedEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    @Qualifier("UserDetailsService")
     private UserDetailsService customUserDetailsService;
-
-    @Autowired
     private RestAuthenticationSuccessHandler authenticationSuccessHandler;
 
     @Bean
@@ -43,6 +39,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/swagger-resources").permitAll()
+                .antMatchers("/api/users/").permitAll()
                 .antMatchers("/api/**").hasRole("PUBLISHER")
                 .and()
                 .exceptionHandling()
@@ -56,9 +53,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .failureHandler(new SimpleUrlAuthenticationFailureHandler())
                 .and()
                 .logout()
-                .permitAll()
-        ;
+                .permitAll();
     }
 
+    @Autowired
+    @Qualifier("UserDetailsService")
+    public void setCustomUserDetailsService(UserDetailsService customUserDetailsService) {
+        this.customUserDetailsService = customUserDetailsService;
+    }
 
+    @Autowired
+    public void setAuthenticationSuccessHandler(RestAuthenticationSuccessHandler authenticationSuccessHandler) {
+        this.authenticationSuccessHandler = authenticationSuccessHandler;
+    }
 }

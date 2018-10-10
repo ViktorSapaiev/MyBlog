@@ -1,4 +1,4 @@
-package io.borland.myblog.exception;
+package io.borland.myblog.controller.exception;
 
 public class ArticleHeaderAlreadyExistException extends RuntimeException {
     public ArticleHeaderAlreadyExistException(String header) {

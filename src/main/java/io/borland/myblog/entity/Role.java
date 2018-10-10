@@ -3,7 +3,9 @@ package io.borland.myblog.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
+
 
 
 @Entity
@@ -11,8 +13,10 @@ import java.io.Serializable;
 @Data
 public class Role implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "role_id")
     private int id;
-    @Column
+    @NotEmpty
+    @Column(nullable = false, unique = true)
     private String role;
 }
